@@ -3,7 +3,7 @@ from .operators import run_program_for_search_paths  # noqa
 
 
 """
-Copyright 2019 Chia Network Inc
+Copyright 2019 Chik Network Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

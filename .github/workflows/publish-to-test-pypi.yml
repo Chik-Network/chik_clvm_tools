@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - 'long_lived/**'
-      - main
+      #- main
       - 'release/**'
     tags:
         - '**'

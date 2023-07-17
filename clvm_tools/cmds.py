@@ -19,9 +19,9 @@ from .debug import make_trace_pre_eval, trace_to_text, trace_to_table
 from .sha256tree import sha256tree
 
 try:
-    from clvm_rs import run_serialized_chia_program, MEMPOOL_MODE
+    from clvm_rs import run_serialized_chik_program, MEMPOOL_MODE
 except ImportError:
-    run_serialized_chia_program = None
+    run_serialized_chik_program = None
 
 
 def path_or_code(arg):
@@ -226,7 +226,7 @@ def launch_tool(args, tool_name, default_stage=0):
             use_rust = (
                 tool_name != "run"
                 and not pre_eval_f
-                and run_serialized_chia_program
+                and run_serialized_chik_program
                 and args.stage.__name__ == "stages.stage_0"
             )
 
@@ -235,7 +235,7 @@ def launch_tool(args, tool_name, default_stage=0):
             time_parse_input = time.perf_counter()
 
             try:
-                cost, result = run_serialized_chia_program(
+                cost, result = run_serialized_chik_program(
                     program_serialized,
                     arg_serialized,
                     max_cost,
@@ -301,7 +301,7 @@ def read_ir(args=sys.argv):
 
 
 """
-Copyright 2018 Chia Network Inc
+Copyright 2018 Chik Network Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -17,7 +17,7 @@ dev_dependencies = [
 setup(
     name="clvm_tools",
     packages=["ir", "clvm_tools", "clvm_tools.setuptools", "stages", "stages.stage_2",],
-    author="Chia Network, Inc.",
+    author="Chik Network, Inc.",
     entry_points={
         "console_scripts": [
             "read_ir = clvm_tools.cmds:read_ir",
@@ -30,9 +30,9 @@ setup(
     package_data={
         "": ["py.typed"],
     },
-    author_email="kiss@chia.net",
+    author_email="kiss@chiknetwork.com",
     install_requires=dependencies,
-    url="https://github.com/Chia-Network",
+    url="https://github.com/Chik-Network",
     license="https://opensource.org/licenses/Apache-2.0",
     description="CLVM compiler.",
     long_description=long_description,
@@ -47,7 +47,7 @@ setup(
     ],
     extras_require=dict(dev=dev_dependencies,),
     project_urls={
-        "Bug Reports": "https://github.com/Chia-Network/clvm_tools",
-        "Source": "https://github.com/Chia-Network/clvm_tools",
+        "Bug Reports": "https://github.com/Chik-Network/clvm_tools",
+        "Source": "https://github.com/Chik-Network/clvm_tools",
     },
 )

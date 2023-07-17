@@ -11,7 +11,7 @@ Set up your virtual environments
     $ . ./venv/bin/activate (windows: venv\Scripts\activate.bat)
     $ pip install -e .
 
-If you run into any issues, be sure to check out [this section of the wiki](https://github.com/Chia-Network/chia-blockchain/wiki/Help-with-clvm_tools)
+If you run into any issues, be sure to check out [this section of the wiki](https://github.com/Chik-Network/chik-blockchain/wiki/Help-with-clvm_tools)
 
 Optionally, run unit tests for a sanity check.
 
@@ -38,7 +38,7 @@ To execute this code:
 
 ## Basic example
 
-The high level language is a superset of [clvm](https://github.com/Chia-Network/clvm), adding several operators. The main supported operator is `mod` which lets you define a set of macros and functions, and an entry point that calls them. Here's an example.
+The high level language is a superset of [clvm](https://github.com/Chik-Network/clvm), adding several operators. The main supported operator is `mod` which lets you define a set of macros and functions, and an entry point that calls them. Here's an example.
 
     (mod (INDEX)
          (defun factorial (VALUE) (if (= VALUE 1) 1 (* VALUE (factorial (- VALUE 1)))))

@@ -1,6 +1,6 @@
 from clvm import KEYWORD_TO_ATOM
-from clvm_tools.binutils import disassemble
-from clvm_tools.NodePath import LEFT, TOP
+from chik_clvm_tools.binutils import disassemble
+from chik_clvm_tools.NodePath import LEFT, TOP
 
 from .defaults import default_macro_lookup
 from .helpers import brun, eval, quote

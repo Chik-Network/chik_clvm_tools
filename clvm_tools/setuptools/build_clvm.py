@@ -3,7 +3,7 @@ from distutils import log
 
 from setuptools.dist import Distribution
 
-from clvm_tools.clvmc import compile_clvm
+from chik_clvm_tools.clvmc import compile_clvm
 
 
 Distribution.clvm_extensions = ()

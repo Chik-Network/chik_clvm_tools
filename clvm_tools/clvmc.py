@@ -1,4 +1,4 @@
-# clvm_tools setuptools integration
+# chik_clvm_tools setuptools integration
 
 from distutils import log
 from distutils.dep_util import newer
@@ -7,7 +7,7 @@ import os
 import pathlib
 
 from ir import reader
-from clvm_tools import binutils
+from chik_clvm_tools import binutils
 from stages import stage_2
 
 

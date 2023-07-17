@@ -1,4 +1,4 @@
-from clvm_tools.binutils import assemble
+from chik_clvm_tools.binutils import assemble
 
 from stages.stage_0 import run_program
 

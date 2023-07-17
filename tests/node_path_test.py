@@ -1,6 +1,6 @@
 from clvm.casts import int_from_bytes
 
-from clvm_tools.NodePath import NodePath, TOP, LEFT, RIGHT
+from chik_clvm_tools.NodePath import NodePath, TOP, LEFT, RIGHT
 
 LEFT_RIGHT_LEFT = LEFT + RIGHT + LEFT
 

@@ -5,9 +5,9 @@ from ir.writer import write_ir_to_stream
 
 
 from clvm.EvalError import EvalError
-from clvm_tools.operator_dict import OperatorDict
+from chik_clvm_tools.operator_dict import OperatorDict
 
-from clvm_tools.binutils import assemble_from_ir, disassemble_to_ir
+from chik_clvm_tools.binutils import assemble_from_ir, disassemble_to_ir
 
 from stages.stage_0 import (
     run_program as run_program_0,

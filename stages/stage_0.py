@@ -2,7 +2,7 @@ from clvm import run_program as default_run_program  # noqa
 from clvm.operators import OPERATOR_LOOKUP, OperatorDict
 from clvm.EvalError import EvalError
 
-from clvm_tools import binutils
+from chik_clvm_tools import binutils
 
 def run_program(
     program,

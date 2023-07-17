@@ -1,7 +1,7 @@
 from clvm import to_sexp_f
 
 
-from clvm_tools import binutils
+from chik_clvm_tools import binutils
 
 
 """

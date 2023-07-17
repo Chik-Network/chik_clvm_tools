@@ -7,7 +7,7 @@ test of the compiler, just the `clvmc` api.
 
 from tempfile import TemporaryDirectory
 
-from clvm_tools import clvmc
+from chik_clvm_tools import clvmc
 
 
 INCLUDE_CODE = "((defconstant FOO 6001))"

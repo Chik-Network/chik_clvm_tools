@@ -1,9 +1,9 @@
 from clvm import KEYWORD_TO_ATOM
 
-from clvm_tools.pattern_match import match
-from clvm_tools.binutils import assemble
+from chik_clvm_tools.pattern_match import match
+from chik_clvm_tools.binutils import assemble
 
-from clvm_tools.NodePath import NodePath, LEFT, RIGHT
+from chik_clvm_tools.NodePath import NodePath, LEFT, RIGHT
 from .helpers import quote
 
 QUOTE_ATOM = KEYWORD_TO_ATOM["q"]

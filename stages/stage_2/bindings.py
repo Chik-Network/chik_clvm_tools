@@ -1,4 +1,4 @@
-from clvm_tools import binutils
+from chik_clvm_tools import binutils
 
 
 brun = binutils.assemble("(a 2 3)")

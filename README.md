@@ -1,6 +1,6 @@
 # Introduction
 
-This is the in-development version of `clvm_tools` for clvm, which implements, a LISP-like language for encumbering and releasing funds with smart-contract capabilities.
+This is the in-development version of `chik_clvm_tools` for clvm, which implements, a LISP-like language for encumbering and releasing funds with smart-contract capabilities.
 
 
 # Set up
@@ -11,7 +11,7 @@ Set up your virtual environments
     $ . ./venv/bin/activate (windows: venv\Scripts\activate.bat)
     $ pip install -e .
 
-If you run into any issues, be sure to check out [this section of the wiki](https://github.com/Chik-Network/chik-blockchain/wiki/Help-with-clvm_tools)
+If you run into any issues, be sure to check out [this section of the wiki](https://github.com/Chik-Network/chik-blockchain/wiki/Help-with-chik_clvm_tools)
 
 Optionally, run unit tests for a sanity check.
 

@@ -1,8 +1,8 @@
 from typing import Dict
 
-from clvm import KEYWORD_FROM_ATOM, KEYWORD_TO_ATOM
-from clvm.casts import int_from_bytes, int_to_bytes
-from clvm.SExp import SExp
+from klvm import KEYWORD_FROM_ATOM, KEYWORD_TO_ATOM
+from klvm.casts import int_from_bytes, int_to_bytes
+from klvm.SExp import SExp
 
 from ir.reader import read_ir
 from ir.writer import write_ir

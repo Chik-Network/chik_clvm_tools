@@ -3,8 +3,8 @@
 import io
 from typing import Iterator
 
-from clvm import casts, SExp
-from clvm.serialize import sexp_to_stream
+from klvm import casts, SExp
+from klvm.serialize import sexp_to_stream
 
 from .Type import Type
 from .utils import ir_nullp, ir_type, ir_listp, ir_first, ir_rest, ir_as_atom, ir_val

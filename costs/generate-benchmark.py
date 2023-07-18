@@ -150,7 +150,7 @@ def gen_apply(n, name):
     folder = 'test-programs/%s' % name
     try: os.mkdir(folder)
     except: pass
-    with open(folder + '/%s-%d.clvm' % (name, n), 'w+') as f:
+    with open(folder + '/%s-%d.klvm' % (name, n), 'w+') as f:
         for i in range(n):
             f.write('(a (q . (lognot ');
 
@@ -184,7 +184,7 @@ def print_files(fun):
     for value_size in vsizes:
         for i in range(2, end, step):
             name, prg, env = fun(i, value_size)
-            open(folder + '/' + name + '.clvm', 'w+').write(prg)
+            open(folder + '/' + name + '.klvm', 'w+').write(prg)
             open(folder + '/' + name + '.env', 'w+').write(env)
 
 try: os.mkdir('test-programs')

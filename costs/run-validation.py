@@ -21,7 +21,7 @@ plot "mixed-programs/results.csv" using 1:2 with points
 gnuplot.close()
 
 counter = 0
-for fn in glob.glob('mixed-programs/*.clvm'):
+for fn in glob.glob('mixed-programs/*.klvm'):
 
     print('%04d: %s' % (counter, fn))
     counter += 1

@@ -1,4 +1,4 @@
-from chik_clvm_tools.binutils import assemble
+from klvm_tools.binutils import assemble
 
 from stages.stage_0 import run_program
 
@@ -6,7 +6,7 @@ from .pattern_match import match
 
 
 # CURRY_OBJ_CODE contains compiled code from the output of the following:
-# run -i clvm_runtime '(mod (F . args) (include curry.clvm) (curry_args F args))'
+# run -i klvm_runtime '(mod (F . args) (include curry.klvm) (curry_args F args))'
 
 # the text below has been hand-optimized to replace `((c (q X) Y))` with `(a (q X) Y)`
 # and `(q 0)` with `0`

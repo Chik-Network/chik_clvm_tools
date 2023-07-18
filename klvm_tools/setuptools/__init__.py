@@ -1,4 +1,4 @@
-from .build_clvm import build_clvm  # noqa
+from .build_klvm import build_klvm  # noqa
 from .patch_build_ext import patch_build_ext
 from .patched_build_ext import build_ext
 

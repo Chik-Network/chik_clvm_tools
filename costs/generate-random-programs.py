@@ -285,7 +285,7 @@ while left_to_generate > 0:
 
     program = make_expression(depth, env_depth)
     arguments = make_tree(env_depth)
-    filename = 'mixed-programs/mixed-%08x.clvm' % seed
+    filename = 'mixed-programs/mixed-%08x.klvm' % seed
     env_filename = 'mixed-programs/mixed-%08x.env' % seed
     prg = open(filename, 'w+').write(program)
     env_file = open(env_filename, 'w+').write(arguments)

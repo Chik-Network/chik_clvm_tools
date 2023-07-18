@@ -1,14 +1,14 @@
-from clvm import to_sexp_f
+from klvm import to_sexp_f
 
 
-from chik_clvm_tools import binutils
+from klvm_tools import binutils
 
 
 """
 "function" is used in front of a constant uncompiled
 program to indicate we want this program literal to be
 compiled and quoted, so it can be passed as an argument
-to a compiled clvm program.
+to a compiled klvm program.
 
 EG: (function (+ 20 @)) should return (+ (q . 20) 1) when run.
 Thus (opt (com (q . (function (+ 20 @)))))
@@ -75,7 +75,7 @@ DEFAULT_MACROS_SRC = [
                (function (unquote B))
                (function (unquote C)))
             @)))""",
-    # / operator at the clvm layer is becoming deprecated and
+    # / operator at the klvm layer is becoming deprecated and
     # will be implemented using divmod.
     """(defmacro / (A B) (qq (f (divmod (unquote A) (unquote B)))))""",
 ]

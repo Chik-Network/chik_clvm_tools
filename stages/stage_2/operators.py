@@ -4,10 +4,10 @@ from ir.reader import read_ir
 from ir.writer import write_ir_to_stream
 
 
-from clvm.EvalError import EvalError
-from chik_clvm_tools.operator_dict import OperatorDict
+from klvm.EvalError import EvalError
+from klvm_tools.operator_dict import OperatorDict
 
-from chik_clvm_tools.binutils import assemble_from_ir, disassemble_to_ir
+from klvm_tools.binutils import assemble_from_ir, disassemble_to_ir
 
 from stages.stage_0 import (
     run_program as run_program_0,

@@ -1,4 +1,4 @@
-# chik_clvm_tools setuptools integration
+# klvm_tools setuptools integration
 
 from distutils import log
 from distutils.dep_util import newer
@@ -7,11 +7,11 @@ import os
 import pathlib
 
 from ir import reader
-from chik_clvm_tools import binutils
+from klvm_tools import binutils
 from stages import stage_2
 
 
-def compile_clvm_text(text, search_paths):
+def compile_klvm_text(text, search_paths):
     ir_src = reader.read_ir(text)
     assembled_sexp = binutils.assemble_from_ir(ir_src)
 
@@ -21,12 +21,12 @@ def compile_clvm_text(text, search_paths):
     return result
 
 
-def compile_clvm(input_path, output_path, search_paths=[]):
+def compile_klvm(input_path, output_path, search_paths=[]):
     if newer(input_path, output_path):
-        log.info("clvmcc %s -o %s" % (input_path, output_path))
+        log.info("klvmcc %s -o %s" % (input_path, output_path))
         with open(input_path) as f:
             text = f.read()
-        result = compile_clvm_text(text, search_paths)
+        result = compile_klvm_text(text, search_paths)
         hex = result.as_bin().hex()
 
         with open(output_path, "w") as f:
@@ -42,9 +42,9 @@ def find_files(path=""):
     r = []
     for dirpath, dirnames, filenames in os.walk(path):
         for filename in filenames:
-            if filename.endswith(".clvm"):
+            if filename.endswith(".klvm"):
                 full_path = pathlib.Path(dirpath, filename)
                 target = "%s.hex" % path
-                compile_clvm(full_path, target)
+                compile_klvm(full_path, target)
                 r.append(target)
     return r

@@ -1,4 +1,4 @@
 try:
-    from clvm.operators import OperatorDict  # noqa
+    from klvm.operators import OperatorDict  # noqa
 except ImportError:
     OperatorDict = dict  # noqa

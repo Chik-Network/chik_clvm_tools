@@ -1,6 +1,6 @@
 # Introduction
 
-This is the in-development version of `chik_clvm_tools` for clvm, which implements, a LISP-like language for encumbering and releasing funds with smart-contract capabilities.
+This is the in-development version of `klvm_tools` for klvm, which implements, a LISP-like language for encumbering and releasing funds with smart-contract capabilities.
 
 
 # Set up
@@ -11,7 +11,7 @@ Set up your virtual environments
     $ . ./venv/bin/activate (windows: venv\Scripts\activate.bat)
     $ pip install -e .
 
-If you run into any issues, be sure to check out [this section of the wiki](https://github.com/Chik-Network/chik-blockchain/wiki/Help-with-chik_clvm_tools)
+If you run into any issues, be sure to check out [this section of the wiki](https://github.com/Chik-Network/chik-blockchain/wiki/Help-with-klvm_tools)
 
 Optionally, run unit tests for a sanity check.
 
@@ -21,7 +21,7 @@ Optionally, run unit tests for a sanity check.
 
 # Quick examples
 
-The language has two components: the higher level language and the compiled lower level language which runs on the clvm.
+The language has two components: the higher level language and the compiled lower level language which runs on the klvm.
 To compile the higher level language into the lower level language use:
 
     $ run '(mod ARGUMENT (+ ARGUMENT 3))'
@@ -38,20 +38,20 @@ To execute this code:
 
 ## Basic example
 
-The high level language is a superset of [clvm](https://github.com/Chik-Network/clvm), adding several operators. The main supported operator is `mod` which lets you define a set of macros and functions, and an entry point that calls them. Here's an example.
+The high level language is a superset of [klvm](https://github.com/Chik-Network/klvm), adding several operators. The main supported operator is `mod` which lets you define a set of macros and functions, and an entry point that calls them. Here's an example.
 
     (mod (INDEX)
          (defun factorial (VALUE) (if (= VALUE 1) 1 (* VALUE (factorial (- VALUE 1)))))
          (factorial INDEX)
          )
 
-You can copy this to a file `fact.clvm`, then compile it with `run fact.clvm` and you'll see output like
+You can copy this to a file `fact.klvm`, then compile it with `run fact.klvm` and you'll see output like
 
 `(a (q 2 2 (c 2 (c 5 ()))) (c (q 2 (i (= 5 (q . 1)) (q 1 . 1) (q 18 5 (a 2 (c 2 (c (- 5 (q . 1)) ()))))) 1) 1))`
 
 You can then run this code with `brun`, passing in a parameter. Or pipe it using this `bash` quoting trick:
 
-    $ brun "`run fact.clvm`" "(5)"
+    $ brun "`run fact.klvm`" "(5)"
     120
 
 This affirms that 5! = 120.
@@ -89,7 +89,7 @@ You generally won't need to use `@`; it's better to use `mod` and named argument
 ### (if)
 
 `(if A B C)`
-This operator is similar to lone condition in clvm `i`, except it actually does a lazy evaluation of either B or C (depending upon A). This allows you to put expensive or failing (like `x`) operator within branches, knowing they won't be executed unless required.
+This operator is similar to lone condition in klvm `i`, except it actually does a lazy evaluation of either B or C (depending upon A). This allows you to put expensive or failing (like `x`) operator within branches, knowing they won't be executed unless required.
 
 This is implemented as a macro, and expands out to `((c (i A (q B) (q C)) (a)))`.
 

@@ -15,7 +15,7 @@ python costs/analyze-benchmark.py
 open test-programs/*/*.png
 ```
 
-`generate-benchmark.py` generate clvm programs that execute a single operator (to the
+`generate-benchmark.py` generate klvm programs that execute a single operator (to the
 extent possible) varying number of times, operating on varying sizes of values.
 
 The programs are stored in a `test-programs` directory.

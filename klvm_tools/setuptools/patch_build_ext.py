@@ -11,8 +11,8 @@ except ImportError:
 
 
 def patch_build_ext(build_ext):
-    # allow to use 'clvm_extensions' parameter for setup() call
-    Distribution.clvm_extensions = ()
+    # allow to use 'klvm_extensions' parameter for setup() call
+    Distribution.klvm_extensions = ()
 
     # replace setuptools build_ext
     Distribution.orig_get_command_class = Distribution.get_command_class
@@ -33,8 +33,8 @@ def patch_build_ext(build_ext):
         return (
             self.ext_modules
             and len(self.ext_modules) > 0
-            or self.clvm_extensions
-            and len(self.clvm_extensions) > 0
+            or self.klvm_extensions
+            and len(self.klvm_extensions) > 0
         )
 
     DistDistribution.has_ext_modules = has_ext_modules
@@ -50,8 +50,8 @@ def patch_build_ext(build_ext):
         mods = []
         if self.distribution.ext_modules:
             mods.extend(self.distribution.ext_modules)
-        if self.distribution.clvm_extensions:
-            mods.extend(self.distribution.clvm_extensions)
+        if self.distribution.klvm_extensions:
+            mods.extend(self.distribution.klvm_extensions)
 
         self.distribution.ext_modules = mods
 

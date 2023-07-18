@@ -1,6 +1,6 @@
-from clvm import KEYWORD_TO_ATOM
-from chik_clvm_tools.binutils import disassemble
-from chik_clvm_tools.NodePath import LEFT, TOP
+from klvm import KEYWORD_TO_ATOM
+from klvm_tools.binutils import disassemble
+from klvm_tools.NodePath import LEFT, TOP
 
 from .defaults import default_macro_lookup
 from .helpers import brun, eval, quote
@@ -87,7 +87,7 @@ def lower_quote(prog, macro_lookup=None, symbol_table=None, run_program=None):
 
 def do_com_prog(prog, macro_lookup, symbol_table, run_program):
     """
-    Turn the given program `prog` into a clvm program using
+    Turn the given program `prog` into a klvm program using
     the macros to do transformation.
 
     prog is an uncompiled s-expression.

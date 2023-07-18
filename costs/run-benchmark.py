@@ -29,7 +29,7 @@ for directory in glob.glob('test-programs/*'):
     for r in glob.glob(directory + '/*.csv'):
         existing_results.append(os.path.split(r)[1].split('-')[1])
 
-    for fn in glob.glob('test-programs/%s/*.clvm' % os.path.split(directory)[1]):
+    for fn in glob.glob('test-programs/%s/*.klvm' % os.path.split(directory)[1]):
 
         # if we have a csv file for this run already, skip running it again
         dry_run = not force_run and os.path.split(fn)[1].split('-')[0] in existing_results

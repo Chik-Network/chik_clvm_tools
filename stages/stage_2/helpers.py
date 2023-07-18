@@ -1,5 +1,5 @@
-from clvm import KEYWORD_TO_ATOM
-from chik_clvm_tools.NodePath import TOP
+from klvm import KEYWORD_TO_ATOM
+from klvm_tools.NodePath import TOP
 
 
 QUOTE_ATOM = KEYWORD_TO_ATOM["q"]

@@ -7,10 +7,10 @@ class build_ext(_build_ext):
     def __init__(self, *args):
         _build_ext.__init__(self, *args)
 
-    def has_clvm_extensions(self):
+    def has_klvm_extensions(self):
         return (
-            self.distribution.clvm_extensions
-            and len(self.distribution.clvm_extensions) > 0
+            self.distribution.klvm_extensions
+            and len(self.distribution.klvm_extensions) > 0
         )
 
     def check_extensions_list(self, extensions):
@@ -18,11 +18,11 @@ class build_ext(_build_ext):
             _build_ext.check_extensions_list(self, extensions)
 
     def run(self):
-        """Run build_clvm sub command """
-        if self.has_clvm_extensions():
-            log.info("running build_clvm")
-            build_clvm = self.get_finalized_command("build_clvm")
-            build_clvm.inplace = self.inplace
-            build_clvm.run()
+        """Run build_klvm sub command """
+        if self.has_klvm_extensions():
+            log.info("running build_klvm")
+            build_klvm = self.get_finalized_command("build_klvm")
+            build_klvm.inplace = self.inplace
+            build_klvm.run()
 
         _build_ext.run(self)

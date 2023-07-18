@@ -1,9 +1,9 @@
-from clvm import KEYWORD_TO_ATOM
+from klvm import KEYWORD_TO_ATOM
 
-from chik_clvm_tools.pattern_match import match
-from chik_clvm_tools.binutils import assemble
+from klvm_tools.pattern_match import match
+from klvm_tools.binutils import assemble
 
-from chik_clvm_tools.NodePath import NodePath, LEFT, RIGHT
+from klvm_tools.NodePath import NodePath, LEFT, RIGHT
 from .helpers import quote
 
 QUOTE_ATOM = KEYWORD_TO_ATOM["q"]
@@ -242,7 +242,7 @@ def apply_null_optimizer(r, eval):
 
 def optimize_sexp(r, eval):
     """
-    Optimize an s-expression R written for clvm to R_opt where
+    Optimize an s-expression R written for klvm to R_opt where
     (a R args) == (a R_opt args) for ANY args.
     """
     if r.nullp() or not r.listp():

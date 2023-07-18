@@ -6,8 +6,8 @@ with open("README.md", "rt") as fh:
     long_description = fh.read()
 
 dependencies = [
-    "clvm>=0.9.2",
-    "chik_clvm_tools_rs>=0.1.25"
+    "klvm>=0.9.2",
+    "klvm_tools_rs>=0.1.25"
 ]
 
 dev_dependencies = [
@@ -15,16 +15,16 @@ dev_dependencies = [
 ]
 
 setup(
-    name="chik_clvm_tools",
-    packages=["ir", "chik_clvm_tools", "chik_clvm_tools.setuptools", "stages", "stages.stage_2",],
+    name="klvm_tools",
+    packages=["ir", "klvm_tools", "klvm_tools.setuptools", "stages", "stages.stage_2",],
     author="Chik Network, Inc.",
     entry_points={
         "console_scripts": [
-            "read_ir = chik_clvm_tools.cmds:read_ir",
-            "opc = chik_clvm_tools.cmds:opc",
-            "opd = chik_clvm_tools.cmds:opd",
-            "run = chik_clvm_tools.cmds:run",
-            "brun = chik_clvm_tools.cmds:brun",
+            "read_ir = klvm_tools.cmds:read_ir",
+            "opc = klvm_tools.cmds:opc",
+            "opd = klvm_tools.cmds:opd",
+            "run = klvm_tools.cmds:run",
+            "brun = klvm_tools.cmds:brun",
         ],
     },
     package_data={
@@ -34,7 +34,7 @@ setup(
     install_requires=dependencies,
     url="https://github.com/Chik-Network",
     license="https://opensource.org/licenses/Apache-2.0",
-    description="CLVM compiler.",
+    description="KLVM compiler.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     classifiers=[
@@ -47,7 +47,7 @@ setup(
     ],
     extras_require=dict(dev=dev_dependencies,),
     project_urls={
-        "Bug Reports": "https://github.com/Chik-Network/chik_clvm_tools",
-        "Source": "https://github.com/Chik-Network/chik_clvm_tools",
+        "Bug Reports": "https://github.com/Chik-Network/klvm_tools",
+        "Source": "https://github.com/Chik-Network/klvm_tools",
     },
 )

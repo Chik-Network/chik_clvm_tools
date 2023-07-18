@@ -6,11 +6,11 @@ import pathlib
 import sys
 import time
 
-from clvm import to_sexp_f, KEYWORD_FROM_ATOM, KEYWORD_TO_ATOM, SExp
-import chik_clvm_tools_rs
-from clvm.EvalError import EvalError
-from clvm.serialize import sexp_from_stream, sexp_to_stream
-from clvm.operators import OP_REWRITE
+from klvm import to_sexp_f, KEYWORD_FROM_ATOM, KEYWORD_TO_ATOM, SExp
+import klvm_tools_rs
+from klvm.EvalError import EvalError
+from klvm.serialize import sexp_from_stream, sexp_to_stream
+from klvm.operators import OP_REWRITE
 
 from ir import reader
 
@@ -19,7 +19,7 @@ from .debug import make_trace_pre_eval, trace_to_text, trace_to_table
 from .sha256tree import sha256tree
 
 try:
-    from clvm_rs import run_serialized_chik_program, MEMPOOL_MODE
+    from klvm_rs import run_serialized_chik_program, MEMPOOL_MODE
 except ImportError:
     run_serialized_chik_program = None
 
@@ -47,7 +47,7 @@ def call_tool(tool_name, desc, conversion, input_args):
         "path_or_code",
         nargs="*",
         type=path_or_code,
-        help="path to clvm script, or literal script",
+        help="path to klvm script, or literal script",
     )
 
     sys.setrecursionlimit(20000)
@@ -73,14 +73,14 @@ def opc(args=sys.argv):
             return None, None
         return sexp, sexp.as_bin().hex()
 
-    call_tool("opc", "Compile a clvm script.", conversion, args)
+    call_tool("opc", "Compile a klvm script.", conversion, args)
 
 
 def opd(args=sys.argv):
     def conversion(blob):
         sexp = sexp_from_stream(io.BytesIO(bytes.fromhex(blob)), to_sexp_f)
         return sexp, binutils.disassemble(sexp)
-    call_tool("opd", "Disassemble a compiled clvm script from hex.", conversion, args)
+    call_tool("opd", "Disassemble a compiled klvm script from hex.", conversion, args)
 
 
 def stage_import(stage):
@@ -98,7 +98,7 @@ def as_bin(streamer_f):
 
 
 def run(args=sys.argv):
-    sys.stdout.write(bytes(chik_clvm_tools_rs.launch_tool("run", args, 2)).decode('utf8'))
+    sys.stdout.write(bytes(klvm_tools_rs.launch_tool("run", args, 2)).decode('utf8'))
 
 
 def brun(args=sys.argv):
@@ -108,7 +108,7 @@ def brun(args=sys.argv):
 def launch_tool(args, tool_name, default_stage=0):
     sys.setrecursionlimit(20000)
     parser = argparse.ArgumentParser(
-        description='Execute a clvm script.'
+        description='Execute a klvm script.'
     )
     parser.add_argument(
         "--strict", action="store_true",
@@ -156,11 +156,11 @@ def launch_tool(args, tool_name, default_stage=0):
     )
     parser.add_argument(
         "path_or_code", type=path_or_code,
-        help="filepath to clvm script, or a literal script")
+        help="filepath to klvm script, or a literal script")
 
     parser.add_argument(
         "env", nargs="?", type=path_or_code,
-        help="clvm script environment, as clvm src, or hex")
+        help="klvm script environment, as klvm src, or hex")
 
     args = parser.parse_args(args=args[1:])
 

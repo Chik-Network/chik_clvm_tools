@@ -7,7 +7,7 @@ with open("README.md", "rt") as fh:
 
 dependencies = [
     "klvm>=0.9.2",
-    "klvm_tools_rs>=0.1.25"
+    "klvm_tools_rs>=0.1.37"
 ]
 
 dev_dependencies = [

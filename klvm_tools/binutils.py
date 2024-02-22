@@ -1,6 +1,7 @@
+import string
 from typing import Dict
 
-from klvm import KEYWORD_FROM_ATOM, KEYWORD_TO_ATOM
+from klvm import KEYWORD_FROM_ATOM, KEYWORD_TO_ATOM, SExp
 from klvm.casts import int_from_bytes, int_to_bytes
 from klvm.SExp import SExp
 
@@ -44,8 +45,13 @@ def assemble_from_ir(ir_sexp):
     return sexp_1.cons(sexp_2)
 
 
-printable_chars = ("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~ ")
+printable_chars = (
+    "0123456789"
+    + "abcdefghijklmnopqrstuvwxyz"
+    + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    + "!#$%&'()*+,-./:;<=>?@[]^_`{|}~ "
+    + "\\"
+)
 
 
 def type_for_atom(atom) -> Type:
@@ -90,6 +96,6 @@ def disassemble(sexp: SExp, keyword_from_atom: Dict[bytes, str] = KEYWORD_FROM_A
     return write_ir(symbols)
 
 
-def assemble(s):
+def assemble(s: str) -> SExp:
     symbols = read_ir(s)
     return assemble_from_ir(symbols)

@@ -7,7 +7,9 @@ with open("README.md", "rt") as fh:
 
 dependencies = [
     "klvm>=0.9.2",
-    "klvm_tools_rs>=0.1.37"
+    "klvm_tools_rs>=0.1.37",
+    "importlib_metadata",
+    "setuptools",
 ]
 
 dev_dependencies = [
@@ -16,7 +18,13 @@ dev_dependencies = [
 
 setup(
     name="klvm_tools",
-    packages=["ir", "klvm_tools", "klvm_tools.setuptools", "stages", "stages.stage_2",],
+    packages=[
+        "ir",
+        "klvm_tools",
+        "klvm_tools.setuptools",
+        "stages",
+        "stages.stage_2",
+    ],
     author="Chik Network, Inc.",
     entry_points={
         "console_scripts": [
@@ -45,7 +53,9 @@ setup(
         "License :: OSI Approved :: Apache Software License",
         "Topic :: Security :: Cryptography",
     ],
-    extras_require=dict(dev=dev_dependencies,),
+    extras_require=dict(
+        dev=dev_dependencies,
+    ),
     project_urls={
         "Bug Reports": "https://github.com/Chik-Network/klvm_tools",
         "Source": "https://github.com/Chik-Network/klvm_tools",
